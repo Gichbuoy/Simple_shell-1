@@ -32,24 +32,24 @@ char *get_history_file(info_t *info)
  */
 int write_history(info_t *info)
 {
-	ssize_t d;
+	ssize_t fd;
 	char *filenm = get_history_file(info);
 	list_t *node = NULL;
 
 	if (!filenm)
 		return (-1);
 
-	d = open(filenm, O_CREAT | O_TRUNC | O_RDWR, 0644);
+	fd = open(filenm, O_CREAT | O_TRUNC | O_RDWR, 0644);
 	free(filenm);
-	if (d == -1)
+	if (fd == -1)
 		return (-1);
 	for (node = info->history; node; node = node->next)
 	{
-		_putsfd(node->str, d);
-		_putfd('\n', d);
+		_putsfd(node->str, fd);
+		_putfd('\n', fd);
 	}
-	_putd(BUF_FLUSH, d);
-	close(d);
+	_putfd(BUF_FLUSH, fd);
+	close(fd);
 	return (1);
 }
 
@@ -66,7 +66,7 @@ int read_history(info_t *info)
 	struct stat st;
 	char *buf = NULL, *filenam = get_history_file(info);
 
-	if (!filename)
+	if (!filenam)
 		return (0);
 
 	d = open(filenam, O_RDONLY);
