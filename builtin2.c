@@ -2,7 +2,7 @@
 
 /**
  * _myhistory - functions displays history list, .
- * @info: Structure containing potential arguments. maintains
+ * @inf: Structure containing potential arguments. maintains
  *        constant function prototype.
  *  Return: Always 0
  */
@@ -69,7 +69,7 @@ int print_alias(list_t *node1)
 	if (node1)
 	{
 		q = _strchr(node1->str, '=');
-		for (a = node1->str; a <=q; a++)
+		for (a = node1->str; a <= q; a++)
 			_putchar(*a);
 		_putchar('\'');
 		_puts(q + 1);
@@ -80,7 +80,7 @@ int print_alias(list_t *node1)
 }
 
 /**
- * _myalias - function that copies the alias builtin 
+ * _myalias - function that copies the alias in builtin
  * @info: Structure tht has potential arguments.maintains
  *          constant function prototype.
  *  Return: Always 0
