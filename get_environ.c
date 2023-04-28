@@ -68,7 +68,7 @@ int _setenv(info_t *info, char *var, char *value)
 		return (0);
 
 	buff = malloc(_strlen(var) + _strlen(value) + 2);
-	if (!buf)
+	if (!buff)
 		return (1);
 	_strcpy(buff, var);
 	_strcat(buff, "=");
