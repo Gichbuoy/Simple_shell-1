@@ -12,13 +12,13 @@ int _erratoi(char *str)
 	unsigned long int result = 0;
 
 	if (*str == '+')
-		str++;  /* TODO:  does this make main print 255? */
+		str++;  /*   does this make main print 255? */
 	for (j = 0;  str[j] != '\0'; j++)
 	{
 		if (str[j] >= '0' && str[j] <= '9')
 		{
 			result *= 10;
-			result += (str[i] - '0');
+			result += (str[j] - '0');
 			if (result > INT_MAX)
 				return (-1);
 		}
@@ -107,7 +107,7 @@ char *convert_number(long int nm, int base, int flag)
 		sign = '-';
 
 	}
-	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+	arr = flag & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 	pt = &buffer[49];
 	*pt = '\0';
 
