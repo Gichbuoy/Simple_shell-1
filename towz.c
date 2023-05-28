@@ -3,7 +3,7 @@
 /**
  * **strtow - functon that splits a string into words.
  * Repeat delimiters are ignored
- * @str: the input string
+ * @str: the input string to split
  * @d: the delimeter string
  *
  * Return: a pointer to an array of strings,
