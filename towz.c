@@ -53,7 +53,7 @@ char **strtow(char *str, char *d)
 
 /**
  * **strtow2 - function that splits a string into words
- * @str: the input string
+ * @str: the input string to split
  * @d: the delimeter
  *
  * Return: a pointer to an array of strings,
